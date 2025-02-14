@@ -7,3 +7,5 @@
     
   ATIVIDADE 2 - LISTAR E EXPLICAR 3 EXEMPLOS DE TRADEOFFS  
   -----------
+
+        
