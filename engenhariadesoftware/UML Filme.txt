@@ -1,0 +1,18 @@
++---------------------------+
+|         Filme             |
++---------------------------+
+| - titulo: String          |
+| - duracao: int            |
+| - horario: String         |
++---------------------------+
+| + Filme(titulo: String,   |
+|          duracao: int,    |
+|          horario: String) |
+| + getTitulo(): String     |
+| + setTitulo(titulo: String): void |
+| + getDuracao(): int       |
+| + setDuracao(duracao: int): void  |
+| + getHorario(): String    |
+| + setHorario(horario: String): void|
+| + toString(): String      |
++---------------------------+
