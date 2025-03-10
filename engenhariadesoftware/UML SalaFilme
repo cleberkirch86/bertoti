@@ -1,0 +1,14 @@
++-------------------------------+
+|          SalaFilme            |
++-------------------------------+
+| - nomeSala: String            |
+| - filmes: LinkedList<Filme>   |
++-------------------------------+
+| + SalaFilme(nomeSala: String) |
+| + getNomeSala(): String       |
+| + setNomeSala(nomeSala: String): void |
+| + addFilme(filme: Filme): void|
+| + getFilmes(): List<Filme>    |
+| + buscarFilmePorTitulo(titulo: String): List<Filme>|
+| + toString(): String          |
++-------------------------------+
