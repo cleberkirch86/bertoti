@@ -1,4 +1,4 @@
-public class TesteSalaFilme {
+public class TestarSalaFilme {
     public static void main(String[] args) {
         // Criando alguns filmes
         Filme filme1 = new Filme("O Senhor dos Anéis", 178, "14:00");
