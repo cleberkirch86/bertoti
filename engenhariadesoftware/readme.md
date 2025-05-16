@@ -25,21 +25,8 @@
 
 > *Figura: Diagrama de classes UML da entidade `Filme`.*
 
-```mermaid
-classDiagram
-    class Filme {
-        - titulo: String
-        - duracao: int
-        - horario: String
-        + Filme(titulo: String, duracao: int, horario: String)
-        + getTitulo(): String
-        + setTitulo(titulo: String): void
-        + getDuracao(): int
-        + setDuracao(duracao: int): void
-        + getHorario(): String
-        + setHorario(horario: String): void
-        + toString(): String
-    }
+![image](https://github.com/user-attachments/assets/aefefc2a-8712-41c8-b4f0-2e304773fb5a)
+
 
 ## Atividade 5 - Classes Java
 
