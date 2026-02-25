@@ -1,20 +1,29 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        List<Cliente> clientes = new ArrayList<>();
-        
-        clientes.add(new Cliente("Joao", new VerificacaoAposentado()));
-        clientes.add(new Cliente("Maria", new VerificacaoClienteComum()));
-        clientes.add(new Cliente("Pedro", new VerificacaoEstudante()));
-        clientes.add(new Cliente("Empresa Ltda", new VerificacaoEmpresa()));
+        Scanner scanner = new Scanner(System.in);
 
-        for (Cliente c : clientes) {
-            System.out.println("Verificando cliente: " + c.getNome());
-            c.verificarEmprestimo();
+        System.out.println("--- Sistema de Crédito ---");
+        System.out.print("Nome do cliente: ");
+        String nome = scanner.nextLine();
+        
+        System.out.print("Tipo do cliente (aposentado, comum, estudante, empresa): ");
+        String tipo = scanner.nextLine().toLowerCase();
+
+        // A "Única classe" (Main/Factory) que decide se pode ou não pode
+        VerificadorEmprestimo strategy;
+        if (tipo.equals("aposentado")) {
+            strategy = new Aprovado();
+        } else {
+            strategy = new Negado();
         }
+
+        Cliente cliente = new Cliente(nome, strategy);
+        cliente.verificarEmprestimo();
+        
+        scanner.close();
     }
 }

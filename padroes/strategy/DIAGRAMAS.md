@@ -1,7 +1,7 @@
-# Diagramas de Classe
+# Diagramas de Classe (Simplificados)
 
-### Anti-padrão (Herança)
-Nesse modelo a classe Cliente obriga todo mundo a ter o método de empréstimo, mesmo quem não pode.
+### Anti-padrão
+Todo mundo herda o método e é obrigado a implementar, mesmo dando erro.
 
 ```mermaid
 classDiagram
@@ -12,30 +12,22 @@ classDiagram
     }
     Cliente <|-- Aposentado
     Cliente <|-- ClienteComum
-    Cliente <|-- Empresa
-    Cliente <|-- Estudante
 ```
 
 ---
 
 ### Padrão Strategy
-Aqui a lógica de verificação foi separada em uma interface. O Cliente só "usa" o verificador que ele precisar.
+A lógica de "aprovar ou negar" fica em estratégias separadas. A decisão de qual usar fica centralizada (na Main ou Factory), mas o Cliente não precisa saber disso.
 
 ```mermaid
 classDiagram
     class Cliente {
         +String nome
-        +VerificadorEmprestimo verificador
+        +VerificadorEmprestimo strategy
         +verificarEmprestimo() void
     }
     class VerificadorEmprestimo {
         <<interface>>
-        +verificar(Cliente c) void
-    }
-    class VerificacaoAposentado {
-        +verificar(Cliente c) void
-    }
-    class VerificacaoClienteComum {
         +verificar(Cliente c) void
     }
     class Aprovado {
@@ -46,8 +38,6 @@ classDiagram
     }
 
     Cliente --> VerificadorEmprestimo
-    VerificadorEmprestimo <|.. VerificacaoAposentado
-    VerificadorEmprestimo <|.. VerificacaoClienteComum
     VerificadorEmprestimo <|.. Aprovado
     VerificadorEmprestimo <|.. Negado
 ```
