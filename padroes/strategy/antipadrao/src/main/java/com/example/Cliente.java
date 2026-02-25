@@ -1,6 +1,5 @@
 package com.example;
 
-// Classe base para todos os clientes
 public abstract class Cliente {
     private String nome;
     private String email;
@@ -18,6 +17,5 @@ public abstract class Cliente {
         return email;
     }
 
-    // Método de empréstimo que não se aplica a todos os clientes (ANTI-PADRÃO)
     public abstract double calcularEmprestimo();
 }

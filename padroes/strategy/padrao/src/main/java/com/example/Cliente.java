@@ -1,6 +1,5 @@
 package com.example;
 
-// Contexto que utiliza a Strategy
 public class Cliente {
     private String nome;
     private VerificadorEmprestimo verificador;
