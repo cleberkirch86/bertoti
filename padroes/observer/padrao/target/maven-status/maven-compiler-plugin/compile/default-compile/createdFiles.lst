@@ -1,0 +1,9 @@
+com\example\padrao\publisher\EventManager.class
+com\example\padrao\BookstoreGUI.class
+com\example\padrao\Main.class
+com\example\padrao\observer\BookEventListener.class
+com\example\padrao\subscriber\EventListener.class
+com\example\padrao\subscriber\EmailListener.class
+com\example\padrao\observer\BookEventManager.class
+com\example\padrao\subscriber\LogListener.class
+com\example\padrao\publisher\Editor.class
