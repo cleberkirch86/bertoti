@@ -4,7 +4,7 @@
 
 Estudante de Banco de Dados na FATEC SJC, com experiência crescente em desenvolvimento de software ao longo dos semestres. Comecei como desenvolvedor, evolui para Product Owner gerenciando backlog e relacionamento com o cliente, e atualmente atuo como Scrum Master conduzindo cerimônias, distribuindo tarefas e contribuindo ativamente com código em projetos fullstack.
 
-Tenho interesse em desenvolvimento backend, integração de sistemas e metodologias ágeis.
+Tenho interesse em desenvolvimento frontend, integração de sistemas, documentação e metodologias ágeis.
 
 ## Contatos
 
