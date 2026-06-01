@@ -1,35 +1,71 @@
 package com.example;
 
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
-@SpringBootApplication
-public class Main implements CommandLineRunner {
+public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        Cliente cliente = null;
+
+        do {
+            System.out.println("\n--- Strategy Antipattern Menu ---");
+            System.out.println("1. Criar Cliente");
+            System.out.println("2. Calcular Empréstimo");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    cliente = criarCliente(scanner);
+                    break;
+                case 2:
+                    if (cliente != null) {
+                        try {
+                            double valor = cliente.calcularEmprestimo();
+                            System.out.println("Emprestimo: " + valor);
+                        } catch (UnsupportedOperationException e) {
+                            System.err.println("ERRO: " + e.getMessage());
+                        }
+                    } else {
+                        System.out.println("Crie um cliente primeiro.");
+                    }
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } while (choice != 0);
+
+        scanner.close();
     }
 
-    @Override
-    public void run(String... args) {
-        System.out.println("\n=== EXECUÇÃO STRATEGY ANTIPADRÃO ===");
-        List<Cliente> clientes = new ArrayList<>();
-        clientes.add(new Aposentado("João Silva", "joao.silva@email.com"));
-        clientes.add(new ClienteComum("Maria Souza", "maria.souza@email.com"));
-        clientes.add(new Estudante("Pedro Martins", "pedro.martins@email.com"));
-        clientes.add(new Empresa("Empresa X", "contato@empresax.com"));
+    private static Cliente criarCliente(Scanner scanner) {
+        System.out.print("Tipo de cliente (1. Aposentado, 2. Cliente Comum, 3. Estudante, 4. Empresa): ");
+        int tipo = scanner.nextInt();
+        scanner.nextLine();
 
-        for (Cliente c : clientes) {
-            System.out.println("Cliente: " + c.getNome());
-            try {
-                double valor = c.calcularEmprestimo();
-                System.out.println("Emprestimo: " + valor);
-            } catch (UnsupportedOperationException e) {
-                System.err.println("ERRO: " + e.getMessage());
-            }
-            System.out.println("-------------------------");
+        System.out.print("Nome do cliente: ");
+        String nome = scanner.nextLine();
+        System.out.print("Email do cliente: ");
+        String email = scanner.nextLine();
+
+        switch (tipo) {
+            case 1:
+                return new Aposentado(nome, email);
+            case 2:
+                return new ClienteComum(nome, email);
+            case 3:
+                return new Estudante(nome, email);
+            case 4:
+                return new Empresa(nome, email);
+            default:
+                System.out.println("Tipo de cliente inválido.");
+                return null;
         }
     }
 }

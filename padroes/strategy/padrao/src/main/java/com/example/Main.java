@@ -1,26 +1,60 @@
 package com.example;
 
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.Scanner;
 
-@SpringBootApplication
-public class Main implements CommandLineRunner {
+public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        Cliente cliente = null;
+
+        do {
+            System.out.println("\n--- Strategy Pattern Menu ---");
+            System.out.println("1. Criar Cliente e Definir Estratégia de Empréstimo");
+            System.out.println("2. Verificar Empréstimo");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); 
+
+            switch (choice) {
+                case 1:
+                    cliente = criarCliente(scanner);
+                    break;
+                case 2:
+                    if (cliente != null) {
+                        cliente.verificarEmprestimo();
+                    } else {
+                        System.out.println("Crie um cliente primeiro.");
+                    }
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } while (choice != 0);
+
+        scanner.close();
     }
 
-    @Override
-    public void run(String... args) {
-        System.out.println("\n=== EXECUÇÃO STRATEGY PADRÃO ===");
-        
-        // Simulação de diferentes tipos de clientes
-        System.out.println("Cenário 1: Cliente Aposentado");
-        Cliente c1 = new Cliente("João Aposentado", new Aprovado());
-        c1.verificarEmprestimo();
+    private static Cliente criarCliente(Scanner scanner) {
+        System.out.print("Nome do cliente: ");
+        String nome = scanner.nextLine();
 
-        System.out.println("\nCenário 2: Cliente Estudante");
-        Cliente c2 = new Cliente("Maria Estudante", new Negado());
-        c2.verificarEmprestimo();
+        System.out.print("Estratégia de empréstimo (1. Aprovado, 2. Negado): ");
+        int estrategiaChoice = scanner.nextInt();
+        scanner.nextLine(); 
+
+        VerificadorEmprestimo estrategia;
+        if (estrategiaChoice == 1) {
+            estrategia = new Aprovado();
+        } else {
+            estrategia = new Negado();
+        }
+
+        System.out.println("Cliente criado com a estratégia definida.");
+        return new Cliente(nome, estrategia);
     }
 }
