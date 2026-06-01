@@ -1,29 +1,26 @@
 package com.example;
 
-import java.util.Scanner;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class Main {
+@SpringBootApplication
+public class Main implements CommandLineRunner {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        SpringApplication.run(Main.class, args);
+    }
 
-        System.out.println("--- Sistema de Crédito ---");
-        System.out.print("Nome do cliente: ");
-        String nome = scanner.nextLine();
+    @Override
+    public void run(String... args) {
+        System.out.println("\n=== EXECUÇÃO STRATEGY PADRÃO ===");
         
-        System.out.print("Tipo do cliente (aposentado, comum, estudante, empresa): ");
-        String tipo = scanner.nextLine().toLowerCase();
+        // Simulação de diferentes tipos de clientes
+        System.out.println("Cenário 1: Cliente Aposentado");
+        Cliente c1 = new Cliente("João Aposentado", new Aprovado());
+        c1.verificarEmprestimo();
 
-        // A "Única classe" (Main/Factory) que decide se pode ou não pode
-        VerificadorEmprestimo strategy;
-        if (tipo.equals("aposentado")) {
-            strategy = new Aprovado();
-        } else {
-            strategy = new Negado();
-        }
-
-        Cliente cliente = new Cliente(nome, strategy);
-        cliente.verificarEmprestimo();
-        
-        scanner.close();
+        System.out.println("\nCenário 2: Cliente Estudante");
+        Cliente c2 = new Cliente("Maria Estudante", new Negado());
+        c2.verificarEmprestimo();
     }
 }

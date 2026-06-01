@@ -1,0 +1,7 @@
+{
+  "name": "composite-antipattern",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "mvn spring-boot:run"
+  }
+}

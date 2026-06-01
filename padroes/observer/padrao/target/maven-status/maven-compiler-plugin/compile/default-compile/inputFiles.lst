@@ -1,9 +1,9 @@
-C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\BookstoreGUI.java
-C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\Main.java
-C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\observer\BookEventListener.java
-C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\observer\BookEventManager.java
 C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\publisher\Editor.java
-C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\publisher\EventManager.java
-C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\subscriber\EmailListener.java
 C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\subscriber\EventListener.java
+C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\BookstoreGUI.java
+C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\subscriber\EmailListener.java
+C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\observer\BookEventManager.java
+C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\observer\BookEventListener.java
+C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\publisher\EventManager.java
 C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\subscriber\LogListener.java
+C:\FATEC\bertoti\padroes\observer\padrao\src\main\java\com\example\padrao\Main.java

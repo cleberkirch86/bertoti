@@ -1,0 +1,10 @@
+com\example\mvc\strategy\EstrategiaDesconto.class
+com\example\mvc\controller\CarrinhoController.class
+com\example\mvc\view\CarrinhoView.class
+com\example\mvc\model\Carrinho.class
+com\example\mvc\model\Item.class
+com\example\mvc\model\Produto.class
+com\example\mvc\observer\Observador.class
+com\example\mvc\model\Kit.class
+com\example\mvc\observer\Sujeito.class
+com\example\mvc\Main.class

@@ -17,8 +17,52 @@ No **Padrao**, a Livraria apenas emite um "evento". Quem estiver interessado (Es
 
 ## Estrutura
 
-* **antipadrao**: Interface fixa onde todas as notificacoes sao obrigatorias e codificadas internamente.
-* **padrao**: Interface dinamica com checkboxes que permitem assinar ou cancelar notificacoes em tempo real.
+### Diagrama Anti-padrão (Observer)
+No anti-padrão, o editor está fortemente acoplado às implementações de log e e-mail.
+
+```mermaid
+classDiagram
+    class EditorWithoutPattern {
+        +openFile(String path)
+        +saveFile()
+        -log(String msg)
+        -sendEmail(String msg)
+    }
+    note for EditorWithoutPattern "Todas as notificações estão hardcoded\ndentro dos métodos de negócio."
+```
+
+### Diagrama Padrão (Observer)
+O uso do `EventManager` desacopla o publicador (`Editor`) dos seus assinantes.
+
+```mermaid
+classDiagram
+    class Editor {
+        +EventManager events
+        +openFile(String path)
+        +saveFile()
+    }
+    class EventManager {
+        -Map listeners
+        +subscribe(String type, EventListener l)
+        +unsubscribe(String type, EventListener l)
+        +notify(String type, String data)
+    }
+    class EventListener {
+        <<interface>>
+        +update(String eventType, String data)
+    }
+    class LogListener {
+        +update(String eventType, String data)
+    }
+    class EmailListener {
+        +update(String eventType, String data)
+    }
+
+    Editor --> EventManager
+    EventManager --> EventListener
+    EventListener <|.. LogListener
+    EventListener <|.. EmailListener
+```
 
 ## Como Executar
 
