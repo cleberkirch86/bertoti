@@ -177,3 +177,67 @@ A equipe desenvolveu uma plataforma web no modelo de "LinkedIn interno", onde co
 **Comunicação**: Exercitei a comunicação clara tanto nas cerimônias ágeis quanto na coordenação técnica entre os membros, garantindo que todos entendessem suas responsabilidades e os objetivos de cada entrega.
 
 **Versatilidade**: Conciliei as responsabilidades de Scrum Master com contribuições técnicas expressivas no código, demonstrando capacidade de transitar entre papéis de gestão e desenvolvimento dentro de um mesmo projeto.
+
+
+---
+
+### Em 2026-1
+
+## DataAgenda — Gestão e Agendamento de Manutenções
+
+### Empresa Parceira: [Altave](https://www.altave.com.br/)
+
+### Problema:
+A empresa parceira Altave enfrentava dificuldades na alocação, visualização e extração de dados sobre as manutenções preventivas e corretivas dos sistemas e ativos de monitoramento instalados em seus clientes. Havia carência de um sistema integrado e centralizado que permitisse monitorar chamados pendentes, alocar técnicos em campo, acompanhar o fluxo de atendimento em tempo real e fornecer visibilidade geográfica e temporal do planejamento das operações.
+
+### Solução Entregue pela Equipe:
+A equipe DataTech desenvolveu o **DataAgenda**, uma aplicação web completa para gestão operacional de manutenções. A plataforma conta com backend em Java 21 com Spring Boot e persistência relacional em OracleDB/MySQL, além de frontend dinâmico em Vue.js com TypeScript. O sistema contempla cadastro e gestão de ativos/sistemas, fluxo operacional de chamados técnicos, painel de agenda interativo para planejamento temporal, visualização geográfica de chamados por meio de mapas interativos e análise contínua de qualidade de código via SonarQube e JaCoCo.
+
+[Repositório do Projeto](https://github.com/DataTechApi/DataAgenda)
+
+#### Tecnologias Utilizadas
+
+> - **Java 21 + Spring Boot**: Utilizados na API REST para lógica de negócios, gerenciamento de chamados e persistência, documentada via Swagger.
+> - **Vue.js + TypeScript**: Utilizados no frontend para criação de interfaces reativas, componentes tipados e consumo dos serviços da API.
+> - **OracleDB / MySQL**: Bancos de dados relacionais para armazenamento consistente de ativos, chamados, técnicos e histórico de atendimentos.
+> - **Leaflet / Mapas**: Biblioteca para exibição e plotagem interativa de localizações geográficas dos chamados e sistemas.
+> - **SonarQube / JaCoCo**: Ferramentas de análise estática de código aplicadas para controle de bugs, vulnerabilidades e cobertura de testes.
+> - **Git e GitHub**: Controle de versão com fluxo de branches por sprint e convenção padronizada de commits (Conventional Commits).
+
+#### Contribuições Pessoais
+
+<details>
+  <summary>Atuação focada como Desenvolvedor (Developer) no Frontend</summary>
+  Atuei estritamente no papel de desenvolvedor (Developer), participando das estimativas em story points, puxando tarefas do backlog da sprint (pull), realizando testes e revisando pull requests da equipe em conformidade com o DoR e DoD estabelecidos.
+</details>
+
+<details>
+  <summary>Desenvolvimento do Painel de Agenda de Chamados</summary>
+  Desenvolvi no frontend (Vue.js/TypeScript) os componentes e a lógica de exibição da agenda de chamados de manutenção, permitindo que a equipe de gestão acompanhe prazos, distribuição temporal dos atendimentos e status das ordens de serviço de forma clara e intuitiva.
+</details>
+
+<details>
+  <summary>Implementação da Visualização Geográfica com Mapas</summary>
+  Fui responsável pela implementação do componente de mapa (MapView.vue) e integração da lógica de geolocalização dos chamados e sistemas, permitindo visualizar espacialmente a localização das manutenções para facilitar o planejamento operacional e logístico.
+</details>
+
+<details>
+  <summary>Ajustes Visuais e Estilização de Telas Operacionais</summary>
+  Contribuí com a estilização e refinamento de telas do sistema (como visualização de chamados e atendimento técnico), garantindo consistência visual com o layout da aplicação e boa usabilidade para técnicos e gestores.
+</details>
+
+#### Hard Skills
+
+- **Vue.js / TypeScript**: Sei fazer com ajuda
+- **Integração de Mapas e Geolocalização Web**: Sei fazer com ajuda
+- **Java / Spring Boot**: Sei fazer com ajuda
+- **OracleDB / MySQL**: Sei fazer com ajuda
+- **Git / GitHub**: Sei fazer com autonomia
+
+#### Soft Skills
+
+**Foco em Execução Técnica**: Atuei inteiramente dedicado ao desenvolvimento de software, entregando as funcionalidades solicitadas (agenda e mapas) no tempo estipulado pela sprint.
+
+**Colaboração e Trabalho em Equipe**: Integrei o fluxo contínuo de revisões de código e cerimônias ágeis, alinhando tarefas com o Product Owner e colegas desenvolvedores.
+
+**Capacidade de Adaptação**: Desenvolvi novos recursos com bibliotecas de mapa e componentes de agenda em Vue.js, adaptando-me às especificidades da stack frontend escolhida pela equipe.
